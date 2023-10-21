@@ -1,23 +1,18 @@
 import 'package:flutter/material.dart';
 
-import 'screens/home_screen.dart';
+import 'presentation/home_page.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const AppWidget());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class AppWidget extends StatelessWidget {
+  const AppWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Ads Integration',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const HomeScreen(),
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Admob Monetization - Banner & Interstitial Ads',
+      home: HomePage(),
     );
   }
 }
