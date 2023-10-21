@@ -5,16 +5,13 @@ import 'widgets.dart';
 class NewsArticlePage extends StatelessWidget {
   final String title;
   final String imagePath;
-  const NewsArticlePage({
-    Key? key,
-    required this.title,
-    required this.imagePath,
-  }) : super(key: key);
+  const NewsArticlePage(
+      {Key? key, required this.title, required this.imagePath})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
       appBar: AppBar(
         centerTitle: true,
         title: const AppBarTitle(),
