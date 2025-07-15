@@ -46,9 +46,7 @@ class _HomePageState extends State<HomePage> {
         itemBuilder: (context, index) {
           final article = NewsArticle.articles[index];
           return Padding(
-            padding: const EdgeInsets.only(
-              bottom: 10,
-            ),
+            padding: const EdgeInsets.only(bottom: 10),
             child: GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -79,16 +77,22 @@ class _HomePageState extends State<HomePage> {
                   child: AdWidget(ad: _bottomBannerAd),
                 ),
               )
-            : const SizedBox.shrink()
+            : const SizedBox.shrink(),
       ],
 
-      bottomNavigationBar: BottomNavigationBar(items: const [
-        BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.home)),
-        BottomNavigationBarItem(
-            label: 'Search', icon: Icon(Icons.search_outlined)),
-        BottomNavigationBarItem(
-            label: 'Profile', icon: Icon(Icons.person_2_outlined)),
-      ]),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.home)),
+          BottomNavigationBarItem(
+            label: 'Search',
+            icon: Icon(Icons.search_outlined),
+          ),
+          BottomNavigationBarItem(
+            label: 'Profile',
+            icon: Icon(Icons.person_2_outlined),
+          ),
+        ],
+      ),
     );
   }
 

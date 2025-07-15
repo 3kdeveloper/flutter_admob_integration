@@ -17,7 +17,7 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Admob Monetization - Banner & Interstitial Ads',
+      title: 'Flutter Admob',
       home: HomePage(),
     );
   }

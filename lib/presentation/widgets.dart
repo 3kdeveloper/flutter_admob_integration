@@ -3,24 +3,21 @@ import 'package:flutter/material.dart';
 import '../data/news_article.dart';
 
 class AppBarTitle extends StatelessWidget {
-  const AppBarTitle({Key? key}) : super(key: key);
+  const AppBarTitle({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Row(
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
-      children: [
-        Icon(Icons.article_outlined),
-        Text('Latest News'),
-      ],
+      children: [Icon(Icons.article_outlined), Text('Latest News')],
     );
   }
 }
 
 class ArticleTile extends StatelessWidget {
   final NewsArticle article;
-  const ArticleTile({Key? key, required this.article}) : super(key: key);
+  const ArticleTile({super.key, required this.article});
 
   @override
   Widget build(BuildContext context) {
@@ -29,20 +26,15 @@ class ArticleTile extends StatelessWidget {
       elevation: 4,
       child: Column(
         children: [
-          Container(
+          Image.asset(
+            article.asset,
+            fit: BoxFit.cover,
             height: 250,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage(article.asset),
-              ),
-            ),
+            width: double.maxFinite,
+            cacheHeight: 300,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 6.0,
-              vertical: 10,
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 6.0, vertical: 10),
             child: Column(
               children: [
                 Text(
@@ -66,10 +58,7 @@ class ArticleTile extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Icon(
-                      Icons.share,
-                      color: Colors.yellowAccent[700],
-                    ),
+                    Icon(Icons.share, color: Colors.yellowAccent[700]),
                     const SizedBox(width: 5),
                     Icon(
                       Icons.favorite_outline_rounded,
